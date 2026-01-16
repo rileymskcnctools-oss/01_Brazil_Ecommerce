@@ -1,15 +1,10 @@
-#import pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.font_manager import FontProperties
 import os
 from sqlalchemy import create_engine
-# 数据库连接
 
-
-
-
-# ==========================================
 # 1. 环境配置与字体修复 (关键步骤)
 # ==========================================
 # 统一数据库连接路径

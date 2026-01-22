@@ -1,9 +1,11 @@
+#管理数据库连接 (engine) 和全局绘图配置
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.font_manager import FontProperties
 import os
 from sqlalchemy import create_engine
+
 
 # 1. 环境配置与字体修复 (关键步骤)
 # ==========================================

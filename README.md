@@ -15,7 +15,7 @@
 * **`02_review_logistic_analysis.ipynb`**：专题二：用户满意度归因，定位物流时效对评分的冲击。
 * **`03_geo_logistics_analysis.ipynb`**：专题三：巴西地域物流差异，定位“重灾区”州。
 * **`04_price_retention_analysis.ipynb`**：专题四：价格敏感度与回购特征，识别高价值 VIP 用户。
-* **`05_monthly_sales_analysis`**：专题五：营收波动因素拆解，识别“黑五”等季节性增长驱动力。
+* **`05_monthly_sales_analysis.ipynb`**：专题五：营收波动因素拆解，识别“黑五”等季节性增长驱动力。
 
 ---
 
@@ -40,7 +40,7 @@
 ---
 
 ## 🛠️ 环境要求与工具
-* **数据仓库**: SQLite / PostgreSQL (通过 SQL 脚本直接运行)
+* **数据仓库**: SQLite (通过 SQL 脚本直接运行)
 * **分析语言**: Python 3.10+
 * **核心库**: 
     * `Pandas`: 数据清洗与特征加工

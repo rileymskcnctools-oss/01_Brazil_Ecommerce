@@ -6,8 +6,8 @@ SELECT
     AVG(JULIANDAY(ood.order_delivered_customer_date) - JULIANDAY(ood.order_estimated_delivery_date)) AS AVG_delay_days
 FROM olist_orders_dataset ood
 JOIN olist_order_reviews_dataset oord ON ood.order_id = oord.order_id 
-WHERE ood.order_status = 'delivered'
+WHERE ood.order_status = 'delivered' -- 仅分析已完成订单
   AND ood.order_delivered_customer_date IS NOT NULL 
   AND ood.order_estimated_delivery_date IS NOT NULL
 GROUP BY 1 
-ORDER BY oord.review_score DESC; -- 改为按评分排序，观察延迟的变化趋势
+ORDER BY oord.review_score ASC; -- 改为按评分排序，观察延迟的变化趋势

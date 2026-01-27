@@ -8,16 +8,20 @@ from sqlalchemy import create_engine
 
 
 # 1. 环境配置与字体修复 (关键步骤)
-# ==========================================
-# 统一数据库连接路径
+
+# 统一数据库连接路径，创建的是 SQLAlchemy Engine 对象，而不是直接连接
 conn = create_engine("sqlite:///../data/olist.db")
+#连接池管理：维持 Connection Pool，减少 I/O 频繁创建销毁开销
+#可移植性：支持代码从 SQLite 平滑迁移至生产环境数据库，如MYSQL、PostgreSQL等
+
+# ==================================================================
+# 2. 全局绘图配置
 # 暴力指向 Windows 微软雅黑字体路径，解决白方块问题
 font_path = 'C:/Windows/Fonts/msyh.ttc' 
-if os.path.exists(font_path):
-    prop = FontProperties(fname=font_path)
-    # 设置全局默认字体名称
-    plt.rcParams['font.sans-serif'] = [prop.get_name()] 
-    plt.rcParams['axes.unicode_minus'] = False 
+if os.path.exists(font_path): #使用这样一个判断语句，防止系统找不到字体报错
+    prop = FontProperties(fname=font_path) # 设置全局默认字体名称
+    plt.rcParams['font.sans-serif'] = [prop.get_name()] # 指定默认字体，获取内部逻辑名称
+    plt.rcParams['axes.unicode_minus'] = False  #解决 负号显示为方块或乱码 的问题
     print(f"✅ 字体加载成功: {prop.get_name()}")
 else:
     print("❌ 未找到字体文件，请检查路径")
